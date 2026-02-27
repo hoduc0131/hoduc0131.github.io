@@ -1,3 +1,4 @@
+/*전페 페이지 기본 설정*/
 *{
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +14,7 @@ body {
 }
 
 /*페이지 가운데 정렬(노선 느낌) */
-*page {
+.page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,25 +23,30 @@ body {
 }
 
 /*상단 제목 영역*/
-*header h1{
+.header {
+  text-align: center;
+  margin-bottom; 24px;
+}
+
+.header h1{
   font-size: 28px;
   margin-bottom: 4px;
 }
 
-*subtitle {
+.subtitle {
   font-size: 14px;
   colort: #6b7280;
 }
 
-/*메인 컨테이노 (노선처럼 폭 좁게)*/
-*container {
+/*메인 컨테이너 (노선처럼 폭 좁게)*/
+.container {
   width: 100%;
   max-width: 760px;
 }
 
 /*카드 공통 스타일*/
-*profile-card,
-*section-card {
+.profile-card,
+.section-card {
   background-color: #ffffff;
   border-radius: 16px;
   padding: 24px 24px 20px;
@@ -50,7 +56,7 @@ body {
 }
 
 /*프로필 카드 레이아웃*/
-*profile-card {
+.profile-card {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 20px
@@ -58,7 +64,7 @@ body {
 }
 
 /*아바타 원형*/
-*avater {
+.avater {
   width: 96px;
   height: 96px;
   border-radius: 999px;
@@ -71,41 +77,89 @@ body {
   box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
 }
 
-/*전체 페이지 기본 설정*/
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.profile-right h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
 }
 
-body {
-  font-family: system-ui, *apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f5f5f7;
-  color: #111827;
-  line-height: 1.6;
-  }
-
-/*페이지 가운데 정렬(노선 느낌)*/
-  *page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px 16px;
-  }
-
-/*상단 제목 영역*/
-*header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-*header h1 {
-  font-size: 28px;
-  margin-bottom: 4px;
-}
-
-*subtitle {
+.profile-summary {
   font-size: 14px;
-  color: #6b7280;
+  margin-bottom: 14px;
 }
+
+/*기본 정보 그리드*/
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.info-label {
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-weight: 500;
+}
+
+/*일반 섹션 카드*/
+.section-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.section-card p {
+  font-size: 14px;
+  color: #374151;
+}
+
+/*태그 리스트*/
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  paddind: 4px 10px;
+  border-radius: 999px;
+  background-color: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #e0e7ff;
+}
+
+/*푸터*/
+.footer {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/*반응형 (모바일에서 세로 정렬) */
+@media (max-width: 640px) {
+  .profile-card {
+    grid-template-colimns: 1fr;
+    text-align: left;
+  }
+
+  .profile-card {
+    padding: 20px 16px 18px;
+  }
+
+  .section-card {
+    padding: 20px 16px 18px;
+  }
+}
+
+
